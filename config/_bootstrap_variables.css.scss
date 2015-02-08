@@ -1,0 +1,32 @@
+/* -------------------------------------
+ * Bootstrap sass variable
+ * (see http://getbootstrap.com/customize/#less-variables)
+ * ------------------------------------- */
+
+// Typography and background
+$font-family-sans-serif:  $base-font;
+$body-bg:                 lighten(#000, 93.5%);
+$font-size-base:          $base-size;
+$line-height-base:        $base-height;
+$headings-font-family:    $header-font;
+
+// Semantic color scheme
+$brand-primary:   $blue;
+$brand-success:   $green;
+$brand-info:      $yellow;
+$brand-danger:    $red;
+$brand-warning:   $orange;
+
+// General radius (for buttons, inputs, popover...)
+$border-radius-base:  2px;
+$border-radius-large: 2px;
+$border-radius-small: 2px;
+
+// Links style
+$link-hover-decoration: none;
+$link-hover-color: $blue;
+$link-color: $green;
+
+// Grid padding
+$grid-gutter-width: 0 ;
+
