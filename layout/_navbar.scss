@@ -1,19 +1,24 @@
 /* -------------------------------------
  * Colors & Fonts
  * ------------------------------------- */
-$navbar-color: black;
+$navbar-color: $gray-light;
 $navbar-hover-color: $yellow;
-$navbar-font-family: $header-font;
+$navbar-font-family: $navbar-font;
+$navbar-font-size: 14px;
+$navbar-text-transform: capitalize;
+$navbar-font-weight: 300;
+$navbar-letter-spacing: 1.5px;
+$navbar-font-family: $navbar-font;
 $navbar-bg: white;
 
 /* -------------------------------------
  * Box model
  * ------------------------------------- */
 $navbar-height: 50px;
-$navbar-vertical-padding: 5px;
+$navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 0;
-$navbar-border-bottom-color: grey;
+$navbar-border-bottom-width: 1px;
+$navbar-border-bottom-color: $gray-lighter;
 
 /* -------------------------------------
  * Navbar button
@@ -38,7 +43,10 @@ $navbar-profile-border-width: 2px;
   background: $navbar-bg;
   font-family: $navbar-font-family;
   border: none;
-  font-weight: 400;
+  font-size: $navbar-font-size;
+  text-transform: $navbar-text-transform;
+  font-weight: $navbar-font-weight;
+  letter-spacing: $navbar-letter-spacing;
   padding-left: $navbar-horizontal-padding;
   padding-right: $navbar-horizontal-padding;
   border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
