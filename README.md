@@ -19,6 +19,28 @@ $ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > app/assets
 $ cd app/assets && unzip stylesheets.zip && rm stylesheets.zip && mv stylesheets-master stylesheets && cd ../..
 ```
 
+Don't forget the sprockets directives in `assets/application.js`
+
+```javascript
+// app/assets/javascripts/application.js
+
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
+//= require_tree .
+```
+
+And the viewport in the layout
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+<head>
+  <!-- Add these line for detecting device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+```
+
 ## Adding new `.scss` files
 
 Look at your main `application.scss` file to see how SASS files are imported.
