@@ -15,8 +15,8 @@ Then in your terminal, in the rails app root.
 $ bundle install
 $ rails generate simple_form:install --bootstrap
 $ rm -rf app/assets/stylesheets
-$ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > app/assets/stylesheets.zip
-$ cd app/assets && unzip stylesheets.zip && rm stylesheets.zip && mv stylesheets-master stylesheets && cd ../..
+$ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
+$ unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
 Don't forget the sprockets directives in `assets/application.js`
