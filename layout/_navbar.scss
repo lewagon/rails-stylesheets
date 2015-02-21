@@ -63,10 +63,6 @@ $navbar-profile-border-width: 2px;
     padding-top: $navbar-vertical-padding;
     padding-bottom: $navbar-vertical-padding;
     background-color: transparent;
-    -webkit-transition: all 0.3s ease;
-       -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-            transition: all 0.3s ease;
   }
 
   .navbar-nav > li > a:hover,
