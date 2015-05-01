@@ -85,6 +85,7 @@ $navbar-profile-border-width: 2px;
     color: $navbar-btn-color;
     border-radius: $navbar-btn-radius;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
+    margin-bottom: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     font-weight: bold;
     background-color: $navbar-btn-bg;
     font-size: 12px;
