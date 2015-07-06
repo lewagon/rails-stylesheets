@@ -1,0 +1,11 @@
+.alert {
+  margin: 0;
+  text-align: center;
+  color: white;
+  &-info {
+    background: $green;
+  }
+  &-warning {
+    background: $red;
+  }
+}
