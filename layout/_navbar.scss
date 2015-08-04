@@ -1,6 +1,12 @@
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
+  transition: all 0.3s ease;
+  &-fixed {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+  }
   &-logo {
     width: 50px;
   }
@@ -11,6 +17,7 @@
   }
   &-item {
     flex: 0 1 auto;
+    cursor: pointer;
     padding: 0 10px;
   }
   &-search {
@@ -25,7 +32,7 @@
       border: none;
       background: transparent;
       position: absolute;
-      right: 10px;
+      right: 14px;
       top: -2px;
       z-index: 1;
     }
@@ -54,6 +61,7 @@
     }
   }
   &-button {
+    margin-left: 10px;
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
@@ -86,15 +94,23 @@
     }
     &:before {
       content: ' ';
-      height: 20px;
-      width: 20px;
+      height: 10px;
+      width: 10px;
       position: absolute;
       right: 10px;
-      top: -10px;
+      top: -6px;
       background-color: white;
       transform: rotate(45deg);
       border-left: 1px solid #E6E6E6;
       border-top: 1px solid #E6E6E6;
     }
+  }
+
+  hr {
+    height: 12px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
