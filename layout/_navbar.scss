@@ -4,6 +4,8 @@
   transition: all 0.3s ease;
   &-fixed {
     position: fixed;
+    left: 0px;
+    top: 0px;
     z-index: 1;
     width: 100%;
   }
@@ -15,13 +17,16 @@
     height: 70px;
     align-items: center;
   }
+  &-pusher {
+    flex: 1 1 auto;
+  }
   &-item {
     flex: 0 1 auto;
     cursor: pointer;
     padding: 0 10px;
   }
   &-search {
-    flex: 1 1 auto;
+    flex: 0 1 300px;
     display: flex;
     justify-content: flex-end;
     padding: 0 10px;
