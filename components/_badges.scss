@@ -1,17 +1,14 @@
-.icon-badge-container {
+.badge-container {
   position: relative;
-  font-size: 20px;
-  width: 20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
   color: grey;
 }
-.user-badge-container {
-  position: relative;
-  width: 30px;
-}
-.icon-badge, .user-badge {
+.badge {
   position: absolute;
   top: -5px;
-  right: -10px;
+  right: -5px;
   font-size: 10px;
   color: white;
   display: flex;
@@ -22,20 +19,20 @@
   text-align: center;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  &-red {
-    background: $red;
-  }
-  &-green {
-    background: $green;
-  }
-  &-blue {
-    background: $blue;
-  }
-  &-black {
-    background: black;
-  }
-  &-bordered {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    border: white 1px solid;
-  }
+}
+.badge-red {
+  background: #EE5F5B;
+}
+.badge-green {
+  background: #32B796;
+}
+.badge-blue {
+  background: #469AE0;
+}
+.badge-black {
+  background: black;
+}
+.badge-bordered {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }
