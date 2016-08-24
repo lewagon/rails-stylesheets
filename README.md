@@ -7,13 +7,19 @@ Ensure you have the following gems in your Rails `Gemfile`
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'autoprefixer-rails'
 ```
 
-Then in your terminal, in the rails app root.
+In your terminal, generate SimpleForm Bootstrap config.
 
 ```bash
 $ bundle install
 $ rails generate simple_form:install --bootstrap
+```
+
+Then replace Rails' stylesheets by Le Wagon's stylesheets:
+
+```
 $ rm -rf app/assets/stylesheets
 $ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
 $ unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
@@ -43,7 +49,7 @@ And the viewport in the layout
 
 ## Adding new `.scss` files
 
-Look at your main `application.scss` file to see how SASS files are imported.
+Look at your main `application.scss` file to see how SCSS files are imported.
 
 ```scss
 // Graphical variables
@@ -85,4 +91,8 @@ For every folder (**`components`**, **`layout`**, **`pages`**, **`vendor`**), th
 
 ## Navbar template
 
-Our `layout/_navbar.scss` code works well with our home-made ERB template which you can find [here](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar.html.erb). Enjoy.
+Our `layout/_navbar.scss` code works well with our home-made ERB template which you can find 
+
+- [version without login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon_without_login.html.erb).
+- [version with login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon.html.erb).
+
