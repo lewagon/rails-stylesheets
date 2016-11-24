@@ -25,7 +25,7 @@ $ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheet
 $ unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
-Don't forget the sprockets directives in `assets/application.js`
+Don't forget the sprockets directives in `assets/javascripts/application.js`
 
 ```javascript
 // app/assets/javascripts/application.js
@@ -91,7 +91,7 @@ For every folder (**`components`**, **`layout`**, **`pages`**, **`vendor`**), th
 
 ## Navbar template
 
-Our `layout/_navbar.scss` code works well with our home-made ERB template which you can find 
+Our `layout/_navbar.scss` code works well with our home-made ERB template which you can find
 
 - [version without login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon_without_login.html.erb).
 - [version with login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon.html.erb).
