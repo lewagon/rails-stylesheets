@@ -60,12 +60,12 @@ Look at your main `application.scss` file to see how SCSS files are imported.
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "vendor/index";
 
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
-@import "vendor/index";
 ```
 
 For every folder (**`components`**, **`layout`**, **`pages`**, **`vendor`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
