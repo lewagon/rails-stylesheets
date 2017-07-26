@@ -53,22 +53,23 @@ Look at your main `application.scss` file to see how SCSS files are imported.
 
 ```scss
 // Graphical variables
-@import "config/variables";
+@import "config/fonts";
+@import "config/colors";
 @import "config/bootstrap_variables";
 
 // External libraries
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "vendor/index";
 
-// Your CSS
+// Your CSS partials
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 ```
 
-For every folder (**`components`**, **`layout`**, **`pages`**, **`vendor`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
+For every folder (**`components`**, **`layout`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
 
 **Example 1**: Let's say you add a new `_contact.scss` file in **`pages`** then modify `pages/_index.scss` as:
 
@@ -82,10 +83,6 @@ For every folder (**`components`**, **`layout`**, **`pages`**, **`vendor`**), th
 
 ```scss
 // layout/_index.scss
-@import "base";
-@import "utilities";
-@import "footer";
-@import "navbar";
 @import "sidebar";
 ```
 
