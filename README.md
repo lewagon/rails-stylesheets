@@ -70,7 +70,7 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "pages/index";
 ```
 
-For every folder (**`components`**, **`layout`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
+For every folder (**`components`**, **`layouts`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
 
 **Example 1**: Let's say you add a new `_contact.scss` file in **`pages`** then modify `pages/_index.scss` as:
 
@@ -80,16 +80,16 @@ For every folder (**`components`**, **`layout`**, **`pages`**), there is one `_i
 @import "contact";
 ```
 
-**Example 2**: Let's say you add a new `_sidebar.scss` file in **`layout`** then modify `layout/_index.scss` as:
+**Example 2**: Let's say you add a new `_sidebar.scss` file in **`layouts`** then modify `layouts/_index.scss` as:
 
 ```scss
-// layout/_index.scss
+// layouts/_index.scss
 @import "sidebar";
 ```
 
 ## Navbar template
 
-Our `layout/_navbar.scss` code works well with our home-made ERB template which you can find here:
+Our `layouts/_navbar.scss` code works well with our home-made ERB template which you can find here:
 
 - [version without login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon_without_login.html.erb).
 - [version with login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon.html.erb).
