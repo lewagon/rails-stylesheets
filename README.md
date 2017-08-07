@@ -8,6 +8,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'jquery-rails' # Add this line if you use Rails 5.1
 ```
 
 In your terminal, generate SimpleForm Bootstrap config.
@@ -49,7 +50,7 @@ And the viewport in the layout
 
 ## Adding new `.scss` files
 
-Look at your main `application.scss` file to see how SCSS files are imported.
+Look at your main `application.scss` file to see how SCSS files are imported. There should **not** be a `*= require_tree .` line in the file.
 
 ```scss
 // Graphical variables
@@ -64,12 +65,12 @@ Look at your main `application.scss` file to see how SCSS files are imported.
 @import "font-awesome";
 
 // Your CSS partials
-@import "layout/index";
+@import "layouts/index";
 @import "components/index";
 @import "pages/index";
 ```
 
-For every folder (**`components`**, **`layout`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
+For every folder (**`components`**, **`layouts`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
 
 **Example 1**: Let's say you add a new `_contact.scss` file in **`pages`** then modify `pages/_index.scss` as:
 
@@ -79,17 +80,18 @@ For every folder (**`components`**, **`layout`**, **`pages`**), there is one `_i
 @import "contact";
 ```
 
-**Example 2**: Let's say you add a new `_sidebar.scss` file in **`layout`** then modify `layout/_index.scss` as:
+**Example 2**: Let's say you add a new `_sidebar.scss` file in **`layouts`** then modify `layouts/_index.scss` as:
 
 ```scss
-// layout/_index.scss
+// layouts/_index.scss
 @import "sidebar";
 ```
 
 ## Navbar template
 
-Our `layout/_navbar.scss` code works well with our home-made ERB template which you can find
+Our `layouts/_navbar.scss` code works well with our home-made ERB template which you can find here:
 
 - [version without login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon_without_login.html.erb).
 - [version with login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon.html.erb).
 
+Don't forget that `*.html.erb` files go in the `app/views` folder, and `*.scss` files go in the `app/assets/stylesheets` folder. Also, our navbar have a link to the `root_path`, so make sure that you have a `root to: "controller#action"` route in your `config/routes.rb` file.
