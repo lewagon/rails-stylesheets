@@ -53,6 +53,8 @@ And the viewport in the layout
 Look at your main `application.scss` file to see how SCSS files are imported. There should **not** be a `*= require_tree .` line in the file.
 
 ```scss
+// app/assets/stylesheets/application.scss
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
