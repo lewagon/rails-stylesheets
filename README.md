@@ -14,16 +14,16 @@ gem 'jquery-rails' # Add this line if you use Rails 5.1
 In your terminal, generate SimpleForm Bootstrap config.
 
 ```bash
-$ bundle install
-$ rails generate simple_form:install --bootstrap
+bundle install
+rails generate simple_form:install --bootstrap
 ```
 
 Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
 ```
-$ rm -rf app/assets/stylesheets
-$ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
-$ unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
+rm -rf app/assets/stylesheets
+curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
+unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
 Don't forget the sprockets directives in `assets/javascripts/application.js`
