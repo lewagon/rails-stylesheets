@@ -5,7 +5,7 @@ Ensure you have the following gems in your Rails `Gemfile`
 ```ruby
 # Gemfile
 gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails' # Add this line if you use Rails 5.1
