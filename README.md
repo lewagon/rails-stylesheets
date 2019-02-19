@@ -31,17 +31,6 @@ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.
 unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
-Don't forget the sprockets directives in `assets/javascripts/application.js`
-
-```javascript
-// app/assets/javascripts/application.js
-
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap-sprockets
-//= require_tree .
-```
-
 And the viewport in the layout
 
 ```html
@@ -55,6 +44,43 @@ And the viewport in the layout
 </head>
 ```
 
+## Bootstrap JS
+
+Make sure you change the webpack config with the following code to include jQuery & Popper in webpack:
+
+```js
+// config/webpack/environment.js
+const { environment } = require('@rails/webpacker')
+
+// Bootstrap 4 has a dependency over jQuery & Popper.js:
+const webpack = require('webpack')
+environment.plugins.prepend('Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    Popper: ['popper.js', 'default']
+  })
+)
+
+module.exports = environment
+```
+
+Finally import bootstrap:
+
+```js
+// app/javascript/packs/application.js
+import 'bootstrap';
+```
+And add this to `application.html.erb`
+```erb
+<!-- app/views/layouts/application.html.erb -->
+
+  <!-- [...] -->
+
+  <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+  <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
+</body>
+```
 ## Adding new `.scss` files
 
 Look at your main `application.scss` file to see how SCSS files are imported. There should **not** be a `*= require_tree .` line in the file.
