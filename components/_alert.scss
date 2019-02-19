@@ -2,14 +2,41 @@
  * Your CSS code for flash notices and alerts
 * ------------------------------------- */
 
-.alert {
-  margin: 0;
-  text-align: center;
-  color: white;
+.flash {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin-bottom: 8px;
 }
-.alert-info {
-  background: $green;
+
+.flash a {
+  color: #0E0000;
 }
-.alert-warning {
-  background: $red;
+
+.flash-success {
+  border: 2px solid #1EDD88;
+}
+
+.flash-success a {
+  color: #1EDD88;
+}
+
+.flash-warning {
+  border: 2px solid #FFC65A;
+}
+
+.flash-warning a {
+  color: #FFC65A;
+}
+
+.flash-danger {
+  border: 2px solid #FD1015;
+}
+
+.flash-danger a {
+  color: #FD1015;
 }

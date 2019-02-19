@@ -1,14 +1,19 @@
 ## Setup
 
+Ensure you have bootstrap and it's dependencies
+
+```bash
+yarn add bootstrap
+yarn add jquery popper.js
+```
+
 Ensure you have the following gems in your Rails `Gemfile`
 
 ```ruby
 # Gemfile
-gem 'bootstrap-sass'
-gem 'font-awesome-sass', '~> 5.0.9'
-gem 'simple_form'
 gem 'autoprefixer-rails'
-gem 'jquery-rails' # Add this line if you use Rails 5.1 or higher
+gem 'font-awesome-sass', '~> 5.6.1'
+gem 'simple_form'
 ```
 
 In your terminal, generate SimpleForm Bootstrap config.
@@ -63,18 +68,16 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap/scss/bootstrap"; // from the node_modules
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
-@import "layouts/index";
 @import "components/index";
 @import "pages/index";
 ```
 
-For every folder (**`components`**, **`layouts`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
+For every folder (**`components`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
 
 **Example 1**: Let's say you add a new `_contact.scss` file in **`pages`** then modify `pages/_index.scss` as:
 
@@ -84,11 +87,11 @@ For every folder (**`components`**, **`layouts`**, **`pages`**), there is one `_
 @import "contact";
 ```
 
-**Example 2**: Let's say you add a new `_sidebar.scss` file in **`layouts`** then modify `layouts/_index.scss` as:
+**Example 2**: Let's say you add a new `_card.scss` file in **`components`** then modify `components/_index.scss` as:
 
 ```scss
-// layouts/_index.scss
-@import "sidebar";
+// components/_index.scss
+@import "card";
 ```
 
 ## Navbar template
