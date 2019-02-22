@@ -1,7 +1,3 @@
-/* -------------------------------------
- * Your CSS code for flash notices and alerts
-* ------------------------------------- */
-
 .flash {
   padding: 16px 24px;
   display: flex;
@@ -10,33 +6,17 @@
   background: white;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.flash a {
-  color: #0E0000;
+  margin: 8px;
 }
 
 .flash-success {
-  border: 2px solid #1EDD88;
-}
-
-.flash-success a {
-  color: #1EDD88;
+  border: 2px solid $green;
 }
 
 .flash-warning {
-  border: 2px solid #FFC65A;
-}
-
-.flash-warning a {
-  color: #FFC65A;
+  border: 2px solid $yellow;
 }
 
 .flash-danger {
-  border: 2px solid #FD1015;
-}
-
-.flash-danger a {
-  color: #FD1015;
+  border: 2px solid $red;
 }
