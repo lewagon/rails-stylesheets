@@ -27,8 +27,8 @@ Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
 ```
 rm -rf app/assets/stylesheets
-curl -L https://github.com/lewagon/stylesheets/archive/new-frontend.zip > stylesheets.zip
-unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-new-frontend app/assets/stylesheets
+curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
+unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
 And the viewport in the layout
@@ -124,7 +124,7 @@ For every folder (**`components`**, **`pages`**), there is one `_index.scss` par
 
 Our `layouts/_navbar.scss` code works well with our home-made ERB template which you can find here:
 
-- [version without login](https://github.com/lewagon/awesome-navbars/blob/new-frontend/templates/_navbar_wagon_without_login.html.erb).
-- [version with login](https://github.com/lewagon/awesome-navbars/blob/new-frontend/templates/_navbar_wagon.html.erb).
+- [version without login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon_without_login.html.erb)
+- [version with login](https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon.html.erb)
 
 Don't forget that `*.html.erb` files go in the `app/views` folder, and `*.scss` files go in the `app/assets/stylesheets` folder. Also, our navbar have a link to the `root_path`, so make sure that you have a `root to: "controller#action"` route in your `config/routes.rb` file.
