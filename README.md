@@ -1,5 +1,12 @@
 ## Setup
 
+First of all make sure you've create a rails app with the `--webpack` flag, like this
+
+```bash
+rails new APP_NAME --webpack
+# If you have, don't run the command again!
+```
+
 Ensure you have bootstrap and it's dependencies
 
 ```bash
