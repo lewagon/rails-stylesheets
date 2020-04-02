@@ -1,8 +1,7 @@
-First of all make sure you've created a rails app with the `--webpack` flag, like this
+First of all make sure you've created a rails app
 
 ```bash
-rails new APP_NAME --webpack
-# If you have, don't run the command again!
+rails new APP_NAME
 ```
 
 ## Setup
