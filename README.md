@@ -37,6 +37,10 @@ curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.
 unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
+**for ubuntu/windows terminal users**
+
+if the `unzip` command returns an error, please install it first by running `sudo apt install unzip`
+
 And the viewport in the layout
 
 ```html
