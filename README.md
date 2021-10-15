@@ -72,7 +72,7 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "pages/index";
 ```
 
-Note that the text color of your buttons might change from white to black when you update the colors in `config/colors`. This is done automatically by Bootstrap using the [WCAG 2.0 algorithm](https://getbootstrap.com/docs/5.1/customize/sass/#color-contrast) to make sure the contrast between the text and the background color meets accessibility standards.
+Note that the (text) color of your buttons might change from white to black when you update the colors in `config/colors`. This is done automatically by Bootstrap using the [WCAG 2.0 algorithm](https://getbootstrap.com/docs/5.1/customize/sass/#color-contrast) which makes sure that the contrast between the text and the background color meets accessibility standards.
 
 For every folder (**`components`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
 
