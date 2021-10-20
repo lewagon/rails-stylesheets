@@ -40,6 +40,8 @@ unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails
 
 **On Ubuntu/Windows**: if the `unzip` command returns an error, please install it first by running `sudo apt install unzip`.
 
+Note that when you update the colors in `config/colors`, the (text) color of your buttons might change from white to black. This is done automatically by Bootstrap using the [WCAG 2.0 algorithm](https://getbootstrap.com/docs/5.1/customize/sass/#color-contrast) which makes sure that the contrast between the text and the background color meets accessibility standards.
+
 
 ## Bootstrap JS
 
@@ -71,8 +73,6 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "components/index";
 @import "pages/index";
 ```
-
-Note that the (text) color of your buttons might change from white to black when you update the colors in `config/colors`. This is done automatically by Bootstrap using the [WCAG 2.0 algorithm](https://getbootstrap.com/docs/5.1/customize/sass/#color-contrast) which makes sure that the contrast between the text and the background color meets accessibility standards.
 
 For every folder (**`components`**, **`pages`**), there is one `_index.scss` partial which is responsible for importing all the other partials of its folder.
 
