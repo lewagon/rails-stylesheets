@@ -28,8 +28,6 @@ bundle install
 rails generate simple_form:install --bootstrap
 ```
 
-Replace **all the content** of your `config/initializers/simple_form_bootstrap.rb` file with [this](https://github.com/heartcombo/simple_form-bootstrap/blob/main/config/initializers/simple_form_bootstrap.rb).
-
 Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
 ```
