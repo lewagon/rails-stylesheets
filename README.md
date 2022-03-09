@@ -28,9 +28,15 @@ bundle install
 rails generate simple_form:install --bootstrap
 ```
 
+⚠ To this day (March, 9th, 2022), Simple Form is not yet fully compatible with Bootstrap 5. To still use Bootstrap 5 with Simple Form, you need to replace the content of your `config/initializers/simple_form_bootstrap.rb` file with [this](https://github.com/heartcombo/simple_form-bootstrap/blob/main/config/initializers/simple_form_bootstrap.rb). You can do it with this command:
+
+```bash
+curl -L https://raw.githubusercontent.com/heartcombo/simple_form-bootstrap/main/config/initializers/simple_form_bootstrap.rb > config/initializers/simple_form_bootstrap.rb
+```
+
 Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
-```
+```bash
 rm -rf app/assets/stylesheets
 curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
 unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
