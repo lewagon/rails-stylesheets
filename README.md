@@ -1,15 +1,20 @@
 First of all make sure you've created a rails app
 
 ```bash
-rails new -j webpack APP_NAME
+rails new APP_NAME
 ```
 
 ## Setup
 
-Ensure you have Bootstrap and it's dependencies:
+Ensure you have Bootstrap:
+
+```ruby
+# Gemfile
+gem "bootstrap"
+```
 
 ```bash
-yarn add bootstrap @popperjs/core
+bundle install
 ```
 
 Ensure you have the following gems in your Rails `Gemfile`:
@@ -22,13 +27,6 @@ gem "sassc-rails"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
-```
-
-Add this line to `assets.rb`:
-
-```ruby
-# Add additional assets to the asset load path.
-Rails.application.config.assets.paths << Rails.root.join("node_modules")
 ```
 
 ⚠ To this day (March, 9th, 2022), Simple Form support of Bootstrap 5 has been merged in `main` but has not been released yet. To use a version of Simple Form which supports Bootstrap 5, we need to install the gem from GitHub and we've added the specific `components/_form_legend_clear.scss` partial in our stylesheets.
@@ -54,7 +52,11 @@ Note that when you update the colors in `config/colors`, the (text) color of you
 
 ## Bootstrap JS
 
-Import Bootstrap:
+Add Bootstrap in importmaps:
+
+```bash
+importmap pin bootstrap
+```
 
 ```js
 // app/javascript/packs/application.js
@@ -74,8 +76,7 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap"; // from the node_modules
-@import "font-awesome-sprockets";
+@import "bootstrap"; // from the node_modules
 @import "font-awesome";
 
 // Your CSS partials
