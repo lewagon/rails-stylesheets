@@ -54,8 +54,11 @@ Note that when you update the colors in `config/colors`, the (text) color of you
 
 Add Bootstrap in importmaps:
 
-```bash
-importmap pin bootstrap
+```ruby
+# config/importmap.rb
+pin "jquery", to: "https://ga.jspm.io/npm:jquery@3.6.0/dist/jquery.js"
+pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.1.3/dist/js/bootstrap.esm.js"
+pin "@popperjs/core", to: "https://ga.jspm.io/npm:@popperjs/core@2.11.5/lib/index.js"
 ```
 
 ```js
