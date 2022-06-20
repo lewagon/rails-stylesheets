@@ -79,7 +79,7 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap"; // from the node_modules
+@import "bootstrap";
 @import "font-awesome";
 
 // Your CSS partials
