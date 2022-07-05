@@ -1,7 +1,7 @@
 First of all make sure you've created a rails app
 
 ```bash
-rails new -j webpack APP_NAME
+rails new APP_NAME
 ```
 
 ## Setup
@@ -19,9 +19,9 @@ Ensure you have the following gems in your Rails `Gemfile`:
 gem "sassc-rails"
 
 # Add those ones
-gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
-gem "simple_form", github: "heartcombo/simple_form"
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass', "~> 5.6.1"
+gem 'simple_form', github: 'heartcombo/simple_form'
 ```
 
 Add this line to `assets.rb`:
