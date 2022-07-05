@@ -6,22 +6,27 @@ rails new APP_NAME
 
 ## Setup
 
-Ensure you have bootstrap and it's dependencies
+Ensure you have Bootstrap and it's dependencies:
 
 ```bash
-yarn add bootstrap@4.6 jquery popper.js
+yarn add bootstrap @popperjs/core
 ```
 
-Ensure you have the following gems in your Rails `Gemfile`
+Ensure you have the following gems in your Rails `Gemfile`:
 
 ```ruby
-# Gemfile
+# Uncomment this gem already present in your Gemfile
+gem "sassc-rails"
+
+# Add those ones
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form'
+gem 'simple_form', github: 'heartcombo/simple_form'
 ```
 
-In your terminal, generate SimpleForm Bootstrap config.
+⚠ To this day (March, 9th, 2022), Simple Form support of Bootstrap 5 has been merged in `main` but has not been released yet. To use a version of Simple Form which supports Bootstrap 5, we need to install the gem from GitHub and we've added the specific `components/_form_legend_clear.scss` partial in our stylesheets.
+
+In your terminal, generate Simple Form Bootstrap config:
 
 ```bash
 bundle install
@@ -30,53 +35,23 @@ rails generate simple_form:install --bootstrap
 
 Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
-```
+```bash
 rm -rf app/assets/stylesheets
-curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
-unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
+curl -L https://github.com/lewagon/stylesheets/archive/no-update.zip > stylesheets.zip
+unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-no-update app/assets/stylesheets
 ```
 
 **On Ubuntu/Windows**: if the `unzip` command returns an error, please install it first by running `sudo apt install unzip`.
 
-And the viewport in the layout
-
-```html
-<!-- app/views/layouts/application.html.erb -->
-<head>
-  <!-- Add these line for detecting device width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <!-- [...] -->
-</head>
-```
+Note that when you update the colors in `config/colors`, the (text) color of your buttons might change from white to black. This is done automatically by Bootstrap using the [WCAG 2.0 algorithm](https://getbootstrap.com/docs/5.1/customize/sass/#color-contrast) which makes sure that the contrast between the text and the background color meets accessibility standards.
 
 ## Bootstrap JS
 
-Make sure you change the webpack config with the following code to include jQuery & Popper in webpack:
+Import Bootstrap:
 
-```js
-// config/webpack/environment.js
-const { environment } = require('@rails/webpacker')
-
-// Bootstrap 4 has a dependency over jQuery & Popper.js:
-const webpack = require('webpack')
-environment.plugins.prepend('Provide',
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    Popper: ['popper.js', 'default']
-  })
-)
-
-module.exports = environment
-```
-
-Finally import bootstrap:
-
-```js
+```javascript
 // app/javascript/packs/application.js
-import 'bootstrap';
+import "bootstrap"
 ```
 
 ## Adding new `.scss` files
