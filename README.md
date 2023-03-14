@@ -1,16 +1,10 @@
 First of all make sure you've created a rails app
 
 ```bash
-rails new -j webpack APP_NAME
+rails new APP_NAME
 ```
 
 ## Setup
-
-Ensure you have Bootstrap and it's dependencies:
-
-```bash
-yarn add bootstrap @popperjs/core
-```
 
 Ensure you have the following gems in your Rails `Gemfile`:
 
@@ -19,16 +13,10 @@ Ensure you have the following gems in your Rails `Gemfile`:
 gem "sassc-rails"
 
 # Add those ones
+gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
-```
-
-Add this line to `assets.rb`:
-
-```ruby
-# Add additional assets to the asset load path.
-Rails.application.config.assets.paths << Rails.root.join("node_modules")
 ```
 
 In your terminal, generate Simple Form Bootstrap config:
@@ -42,8 +30,8 @@ Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
 ```bash
 rm -rf app/assets/stylesheets
-curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
-unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
+curl -L https://github.com/lewagon/stylesheets/archive/more-js.zip > stylesheets.zip
+unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-more-js app/assets/stylesheets
 ```
 
 **On Ubuntu/Windows**: if the `unzip` command returns an error, please install it first by running `sudo apt install unzip`.
@@ -52,11 +40,23 @@ Note that when you update the colors in `config/colors`, the (text) color of you
 
 ## Bootstrap JS
 
+Install Bootstrap JS:
+```bash
+importmap pin bootstrap
+```
+
 Import Bootstrap:
 
 ```js
-// app/javascript/packs/application.js
+// app/javascript/application.js
 import "bootstrap"
+import "@popperjs/core"
+```
+
+```js
+// app/assets/config/manifest.js
+//= link popper.js
+//= link bootstrap.min.js
 ```
 
 ## Adding new `.scss` files
@@ -72,7 +72,7 @@ Look at your main `application.scss` file to see how SCSS files are imported. Th
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap"; // from the node_modules
+@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
