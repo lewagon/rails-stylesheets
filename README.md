@@ -30,8 +30,8 @@ Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
 ```bash
 rm -rf app/assets/stylesheets
-curl -L https://github.com/lewagon/stylesheets/archive/more-js.zip > stylesheets.zip
-unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-more-js app/assets/stylesheets
+curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
+unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
 ```
 
 **On Ubuntu/Windows**: if the `unzip` command returns an error, please install it first by running `sudo apt install unzip`.
