@@ -19,12 +19,17 @@ Ensure you have the following gems in your Rails `Gemfile`:
 gem "sassc-rails"
 
 # Add those ones
-gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form', github: 'heartcombo/simple_form'
+gem "autoprefixer-rails"
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form"
 ```
 
-⚠ To this day (March, 9th, 2022), Simple Form support of Bootstrap 5 has been merged in `main` but has not been released yet. To use a version of Simple Form which supports Bootstrap 5, we need to install the gem from GitHub and we've added the specific `components/_form_legend_clear.scss` partial in our stylesheets.
+Add this line to `assets.rb`:
+
+```ruby
+# Add additional assets to the asset load path.
+Rails.application.config.assets.paths << Rails.root.join("node_modules")
+```
 
 In your terminal, generate Simple Form Bootstrap config:
 
