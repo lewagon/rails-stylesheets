@@ -9,10 +9,7 @@ rails new APP_NAME
 Ensure you have the following gems in your Rails `Gemfile`:
 
 ```ruby
-# Uncomment this gem already present in your Gemfile
 gem "sassc-rails"
-
-# Add those ones
 gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
