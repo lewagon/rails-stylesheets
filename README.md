@@ -56,6 +56,17 @@ import "@popperjs/core"
 //= link bootstrap.min.js
 ```
 
+```rb
+# config/importmap.rb
+
+# replace these lines:
+# pin "bootstrap" # @5.3.2
+# pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.8
+# with this:
+pin "bootstrap", to: "bootstrap.min.js", preload: true
+pin "@popperjs/core", to: "popper.js", preload: true
+```
+
 ## Adding new `.scss` files
 
 Look at your main `application.scss` file to see how SCSS files are imported. There should **not** be a `*= require_tree .` line in the file.
