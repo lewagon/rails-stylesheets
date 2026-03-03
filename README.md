@@ -1,14 +1,21 @@
 First of all make sure you've created a rails app
 
 ```bash
-rails new APP_NAME
+rails new APP_NAME -d postgresql
 ```
 
 ## Setup
 
-Ensure you have the following gems in your Rails `Gemfile`:
+Rails 8 uses Propshaft by default, but we need Sprockets for SCSS compilation. Update your `Gemfile`:
 
 ```ruby
+# Gemfile
+
+# REMOVE this line:
+# gem "propshaft"
+
+# ADD these gems:
+gem "sprockets-rails"
 gem "sassc-rails"
 gem "bootstrap", "~> 5.3"
 gem "autoprefixer-rails"
@@ -27,8 +34,32 @@ Then replace Rails' stylesheets by Le Wagon's stylesheets:
 
 ```bash
 rm -rf app/assets/stylesheets
-curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
-unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
+curl -L https://github.com/lewagon/rails-stylesheets/archive/rails-8.zip > stylesheets.zip
+unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-rails-8 app/assets/stylesheets
+```
+
+Create the Sprockets manifest file (Rails 8 doesn't have this by default):
+
+```bash
+mkdir -p app/assets/config
+touch app/assets/config/manifest.js
+```
+
+```js
+// app/assets/config/manifest.js
+//= link_tree ../images
+//= link_tree ../../javascript .js
+//= link_directory ../stylesheets .css
+```
+
+Update your layout to use the correct stylesheet tag:
+
+```erb
+<!-- app/views/layouts/application.html.erb -->
+<!-- replace this line -->
+<%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+<!-- with this line -->
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 ```
 
 **On Ubuntu/Windows**: if the `unzip` command returns an error, please install it first by running `sudo apt install unzip`.
@@ -50,8 +81,13 @@ import "bootstrap"
 import "@popperjs/core"
 ```
 
+Add the Bootstrap JS files to your manifest:
+
 ```js
 // app/assets/config/manifest.js
+//= link_tree ../images
+//= link_tree ../../javascript .js
+//= link_directory ../stylesheets .css
 //= link popper.js
 //= link bootstrap.min.js
 ```
